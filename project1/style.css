@@ -1,0 +1,182 @@
+*{
+    margin:0;
+    padding:0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+   
+
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    
+
+}
+
+#hero{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+
+}
+
+div a{
+    color:#949395;
+}
+
+#nav{
+    color: #949395;
+    width: 100%;
+    padding: 20px 40px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    
+}
+
+#nav a{
+    text-decoration: none;
+    font-size: 18px;
+}
+
+#heading h1{
+    color: white;
+    margin-left: 30px;
+    text-transform: uppercase;
+    line-height: 1;
+    font-size: 10vw;
+    font-weight: 900;
+    opacity: .6;
+
+
+}
+
+#heading #secondh1{
+    margin-left: 230px;
+}
+
+.block{
+    width: fit-content;
+    
+}
+
+.block h5{
+    text-align: right;
+    color:white;
+    text-transform: uppercase;
+    opacity: .6;
+    font-size: 12px;
+
+}
+#chotiHeadings{
+    color: white;
+
+    padding-right: 50px;
+    text-transform: uppercase;
+    color: white;
+    opacity: .6;
+    margin-top: 20vh;
+
+}
+
+#chotiHeadings h5{
+    text-align: right;
+    margin-top: 1vh;
+    font-size: 1.8vw;
+}
+
+#herofooter{
+    justify-content: space-between;
+    display:flex;
+    align-items: center;
+    position: absolute;
+    bottom: 3%;
+    width: 100%;
+    padding:0 1vw;
+
+}
+
+#herofooter a{
+    text-decoration: none;
+    color: white;
+    opacity: .6;
+    text-transform: uppercase;
+
+}
+
+#iconset{
+    display:flex;
+    gap:5px;
+}
+
+#circle{
+    width: 25px;
+    height: 25px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: #888;
+    border-radius: 50%;
+}
+
+#second{
+    width: 100%;
+    height: 100vh;
+    color: black;
+    background-color: black;
+    padding-top: 150px;
+    padding-left:30px;
+
+    
+
+}
+
+.element{
+    
+    width:90%;
+    padding-left: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: black;
+    padding-right: 50px;
+    color: #888;
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+    border-top: 1px solid #888;   
+}
+
+.element {
+
+    width: 90%;
+    padding-left: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: black;
+    padding-right: 50px;
+    color: #888;
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+    border-top: 1px solid #888;
+}
+
+.element h1{
+    text-transform: uppercase;
+    font-size: 70px;
+    
+
+}
+.element h5{
+    text-align: center;
+    font-size: 13px;
+}
+
+/* .element #hudu{
+    border-bottom: 1px #888 solid;
+    width: ;
+    padding-left:20
+    padding-bottom: 30px;
+} */
