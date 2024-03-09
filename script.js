@@ -38,6 +38,7 @@ function circleMouseFollower(xscale, yscale) {
     document.querySelector(
       "#smallCircle"
     ).style.transform = `translate(${dets.clientX}px,${dets.clientY}px) scale(${xscale},${yscale})`;
+    console.log(dets.clientX, dets.clientY);
   });
 }
 
@@ -71,6 +72,33 @@ function firstPageAnim() {
       duration: 1.5,
     });
 }
+
+var rotate = 0;
+var diffrot = 0;
+
+document.querySelectorAll(".elem").forEach(function (elem) {
+  elem.addEventListener("mousemove", function (dets) {
+    var diff = dets.clientX - rotate;
+    rotate = dets.clientX;
+    gsap.to(elem.querySelector("img"), {
+      opacity: 1,
+      ease: Power3,
+      top: diff,
+      left: dets.clientX,
+      rotate: gsap.utils.clamp(-20, 20, diffrot * 0.5),
+    });
+  });
+});
+
+//to remove image onece it come in, we use mouse leave evnet
+document.querySelectorAll(".elem").forEach(function (elem) {
+  elem.addEventListener("mousemove", function (dets) {
+    gsap.to(elem.querySelector("img"), {
+      opacity: 0,
+      ease: Power3,
+    });
+  });
+});
 
 circleMouseFollower();
 skewed();

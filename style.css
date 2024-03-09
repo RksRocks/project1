@@ -16,16 +16,18 @@ body {
     height: 13px;
     width:13px;
     background-color: white;
-    z-index: 999;
+    z-index: 9999;
     border-radius: 50%;
     position:absolute;
     transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
     /* transform-origin: center; */
 }
+
 #main {
     width: 100%;
     height: auto;
     color: white;
+    position: relative;
     
 }
 
@@ -150,6 +152,8 @@ body {
     box-sizing: border-box;
     padding-left: 40px;
     padding-right: 160px;
+    position: relative;
+    
 
 
 
@@ -207,6 +211,7 @@ body {
     justify-content: center;
     padding-left: 28%;
     padding-top: 200px;
+    
 
 
 }
