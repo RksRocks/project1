@@ -38,7 +38,6 @@ function circleMouseFollower(xscale, yscale) {
     document.querySelector(
       "#smallCircle"
     ).style.transform = `translate(${dets.clientX}px,${dets.clientY}px) scale(${xscale},${yscale})`;
-    console.log(dets.clientX, dets.clientY);
   });
 }
 
@@ -56,50 +55,59 @@ function firstPageAnim() {
       ease: Expo.easeInOut,
       delay: -1,
       stagger: 0.2,
-      duration: 1.4,
+      duration: 1.2,
     })
-    // .to("#smallHeadings h5", {
-    //   y: -20,
-    //   ease: Expo.easeInOut,
-    //   opacity: 0,
-    //   duration: 1,
-    // })
+    .from("#basedIn", {
+      y: -10,
+      ease: Expo.easeInOut,
+      opacity: 0,
+      duration: 1,
+    })
+    .from("#smallHeadings h5", {
+      y: -10,
+      ease: Expo.easeInOut,
+      delay: -0.8,
+      opacity: 0,
+      duration: 1,
+    })
+
     .from("#homeFooter", {
       y: 10,
       ease: Expo.easeInOut,
       delay: -0.8,
       opacity: 0,
-      duration: 1.5,
+      duration: 1,
     });
 }
 
-var rotate = 0;
-var diffrot = 0;
+circleMouseFollower();
+skewed();
+firstPageAnim();
 
 document.querySelectorAll(".elem").forEach(function (elem) {
+  var rotate = 0;
+  var diffrot = 0;
+
+  elem.addEventListener("mouseleave", function (dets) {
+    gsap.to(elem.querySelector("img"), {
+      opacity: 0,
+      ease: Power3,
+      duration: 0.5,
+    });
+  });
+
   elem.addEventListener("mousemove", function (dets) {
-    var diff = dets.clientX - rotate;
+    var diff = dets.clientY - elem.getBoundingClientRect().top;
+    diffrot = dets.clientX - rotate;
     rotate = dets.clientX;
     gsap.to(elem.querySelector("img"), {
       opacity: 1,
       ease: Power3,
       top: diff,
+      xPercent: -55,
+      yPercent: -50,
       left: dets.clientX,
       rotate: gsap.utils.clamp(-20, 20, diffrot * 0.5),
     });
   });
 });
-
-//to remove image onece it come in, we use mouse leave evnet
-document.querySelectorAll(".elem").forEach(function (elem) {
-  elem.addEventListener("mousemove", function (dets) {
-    gsap.to(elem.querySelector("img"), {
-      opacity: 0,
-      ease: Power3,
-    });
-  });
-});
-
-circleMouseFollower();
-skewed();
-firstPageAnim();
